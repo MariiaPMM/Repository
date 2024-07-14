@@ -64,4 +64,10 @@
 // 4. Всі завдання зі статті: https://uk.javascript.info/settimeout-setinterval
 
 const str = 'newString';
-setTimeout(() => alert(str), 2000);
+function printWithDelay(str) {
+	setTimeout(() => {
+		console.log(str);
+	}, 2000);
+}
+
+printWithDelay(str);
