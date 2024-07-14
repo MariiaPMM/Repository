@@ -60,7 +60,6 @@
 // Затримки
 // 1. Напишіть функцію, яка приймає рядок і виводить його в консоль затримкою у 2 секунди.
 
-
 // const str = 'newString';
 // function printWithDelay(str) {
 // 	setTimeout(() => {
@@ -72,22 +71,33 @@
 
 // 2. Створіть таймер, який відлічує час у зворотному напрямку від 10 до 0. Виведіть кожне число затримкою у 1 секунду.
 
+// const timer = from => {
+// 	let current = from;
 
-function timer(from) {
-  let current = from;
+// 	const timerId = setInterval(() => {
+// 		console.log(current);
+// 		current--;
 
-  const timerId = setInterval(() => {
-      console.log(current);
-      current--;
+// 		if (current < 0) {
+// 			clearInterval(timerId);
+// 			console.log('Час закінчився');
+// 		}
+// 	}, 1000);
+// };
 
-      if (current < 0) {
-          clearInterval(timerId);
-          console.log('Час закінчився');
-      }
-  }, 1000);
-}
-
-timer(10);
+// timer(10);
 
 // 3. Створіть функцію, яка випадковим чином виводить одне з трьох повідомлень в консоль кожні 2 секунди.
+
+const randomMessage = () => {
+	const messages = ['Повідомлення 1', 'Повідомлення 2', 'Повідомлення 3'];
+
+	setInterval(() => {
+		const randomIndex = Math.floor(Math.random() * messages.length);
+		console.log(messages[randomIndex]);
+	}, 2000);
+};
+
+randomMessage();
+
 // 4. Всі завдання зі статті: https://uk.javascript.info/settimeout-setinterval
